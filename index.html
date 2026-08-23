@@ -1,247 +1,29 @@
 <!doctype html>
 <html lang="sr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mia Interior Studio</title>
-    <meta name="description" content="Mia Interior Studio — enterijeri prilagođeni ljudima koji u njima žive.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#f7f0e5" />
+  <meta name="description" content="Mia Interior Studio — space planning, arhitektura enterijera i digitalni vodiči." />
+  <link rel="preload" as="image" href="/assets/logo-nav-bordo.webp" fetchpriority="high" />
+  <link rel="preload" as="image" href="/assets/mia-logo-hero.webp" fetchpriority="high" />
+  <title>Mia Interior Studio</title>
+  <script>
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+    window.scrollTo(0, 0);
+  </script>
 </head>
 <body>
-    <header class="site-header" id="top">
-        <a href="#top" class="brand" aria-label="Mia Interior Studio">
-            <img src="assets/WhatsApp_Image_2026-07-22_at_22.47.04.jpeg" alt="Mia Interior Studio logo">
-        </a>
-
-        <button class="menu-toggle" type="button" aria-label="Otvori meni" aria-expanded="false">
-            <span></span>
-            <span></span>
-        </button>
-
-        <nav class="main-nav">
-            <a href="#top">Početna</a>
-            <a href="#projekti">Projekti</a>
-            <a href="#usluge">Usluge</a>
-            <a href="#proces">Proces</a>
-            <a href="#studio">O studiju</a>
-            <a href="#kontakt">Kontakt</a>
-            <a href="#kontakt" class="nav-button">Pošaljite upit</a>
-        </nav>
-    </header>
-
-    <main>
-        <section class="hero">
-            <div class="hero-placeholder">
-                <span>OVDE DODAJ GLAVNU SLIKU ENTERIJERA</span>
-            </div>
-            <div class="hero-overlay"></div>
-
-            <div class="hero-content">
-                <p class="eyebrow light">Mia Interior Studio</p>
-                <h1>
-                    Prostor koji ne izgleda samo lepo.
-                    <em>Prostor u kojem prepoznajete sebe.</em>
-                </h1>
-                <p class="hero-copy">
-                    Projektovanje enterijera zasnovano na vašim navikama,
-                    potrebama i osećaju koji želite da vaš dom ima.
-                </p>
-                <div class="hero-actions">
-                    <a class="button button-primary" href="#projekti">Pogledajte projekte</a>
-                    <a class="button button-ghost" href="#kontakt">Pošaljite upit</a>
-                </div>
-            </div>
-        </section>
-
-        <section class="intro section-shell" id="studio">
-            <div class="intro-copy">
-                <p class="eyebrow">Naš pristup</p>
-                <h2>Ne biramo stil pre nego što upoznamo osobu.</h2>
-                <p>
-                    Način na koji koristite prostor, gde ostavljate stvari,
-                    kako provodite jutro i u kakvom ambijentu se najlakše
-                    opuštate — sve to utiče na enterijer više od trenda.
-                </p>
-            </div>
-
-            <div class="arched-placeholder">
-                <span>OVDE DODAJ DETALJ ENTERIJERA</span>
-            </div>
-        </section>
-
-        <section class="projects section-shell" id="projekti">
-            <div class="section-heading centered">
-                <p class="eyebrow">Projekti koji pričaju priču</p>
-                <h2>Svaki prostor ima svoju priču.</h2>
-            </div>
-
-            <div class="projects-grid">
-                <article class="project-card">
-                    <div class="project-image placeholder">
-                        <span>SLIKA PROJEKTA</span>
-                    </div>
-                    <div class="project-body">
-                        <p class="project-meta">Stan · 75 m²</p>
-                        <h3>Dom za petočlanu porodicu</h3>
-                        <p>
-                            Topao minimalizam, pametna organizacija i dovoljno
-                            prostora za sve što svakodnevica nosi.
-                        </p>
-                        <a href="projekti.html">Pogledajte projekat <span>→</span></a>
-                    </div>
-                </article>
-
-                <article class="project-card">
-                    <div class="project-image placeholder">
-                        <span>SLIKA PROJEKTA</span>
-                    </div>
-                    <div class="project-body">
-                        <p class="project-meta">Stan · 55 m²</p>
-                        <h3>Mirna osnova sa karakterom</h3>
-                        <p>
-                            Svetao prostor, prirodni materijali i skrivena
-                            funkcionalna rešenja.
-                        </p>
-                        <a href="projekti.html">Pogledajte projekat <span>→</span></a>
-                    </div>
-                </article>
-
-                <article class="project-card">
-                    <div class="project-image placeholder">
-                        <span>SLIKA PROJEKTA</span>
-                    </div>
-                    <div class="project-body">
-                        <p class="project-meta">Kuća · 120 m²</p>
-                        <h3>Enterijer povezan sa prirodom</h3>
-                        <p>
-                            Neutralna baza, drvo, mekane teksture i mnogo
-                            prirodnog svetla.
-                        </p>
-                        <a href="projekti.html">Pogledajte projekat <span>→</span></a>
-                    </div>
-                </article>
-            </div>
-
-            <div class="section-action">
-                <a class="button button-outline" href="projekti.html">Pogledajte sve projekte</a>
-            </div>
-        </section>
-
-        <section class="services section-shell" id="usluge">
-            <div class="section-heading split">
-                <div>
-                    <p class="eyebrow">Usluge</p>
-                    <h2>Usluge prilagođene vašem prostoru i potrebama.</h2>
-                </div>
-                <p>
-                    Od prvog razgovora do kompletne dokumentacije — biramo nivo
-                    saradnje koji odgovara vašem projektu.
-                </p>
-            </div>
-
-            <div class="services-grid">
-                <article class="service-card">
-                    <div class="service-icon" aria-hidden="true">⌂</div>
-                    <span class="service-number">01</span>
-                    <h3>Projektovanje enterijera</h3>
-                    <p>Kompletan koncept prostora, raspored, materijali, rasveta i nameštaj.</p>
-                    <button type="button" class="service-toggle">Saznaj više <span>+</span></button>
-                    <div class="service-more">
-                        Idejno rešenje, moodboard, 2D planovi, 3D prikazi i dokumentacija prema dogovorenom paketu.
-                    </div>
-                </article>
-
-                <article class="service-card">
-                    <div class="service-icon" aria-hidden="true">◌</div>
-                    <span class="service-number">02</span>
-                    <h3>Konsultacije</h3>
-                    <p>Stručna pomoć za raspored, boje, materijale i konkretne dileme.</p>
-                    <button type="button" class="service-toggle">Saznaj više <span>+</span></button>
-                    <div class="service-more">
-                        Fokusiran razgovor sa jasnim preporukama i sledećim koracima za vaš prostor.
-                    </div>
-                </article>
-
-                <article class="service-card">
-                    <div class="service-icon" aria-hidden="true">◇</div>
-                    <span class="service-number">03</span>
-                    <h3>3D vizualizacije</h3>
-                    <p>Realističan prikaz prostora pre nego što počnu radovi.</p>
-                    <button type="button" class="service-toggle">Saznaj više <span>+</span></button>
-                    <div class="service-more">
-                        Precizno sagledavanje odnosa materijala, svetla, nameštaja i atmosfere.
-                    </div>
-                </article>
-
-                <article class="service-card">
-                    <div class="service-icon" aria-hidden="true">▱</div>
-                    <span class="service-number">04</span>
-                    <h3>Poslovni prostori</h3>
-                    <p>Enterijeri koji podržavaju identitet brenda i iskustvo korisnika.</p>
-                    <button type="button" class="service-toggle">Saznaj više <span>+</span></button>
-                    <div class="service-more">
-                        Funkcionalni i upečatljivi prostori za ugostiteljstvo, kancelarije i prodajne objekte.
-                    </div>
-                </article>
-            </div>
-        </section>
-
-        <section class="contact section-shell" id="kontakt">
-            <div class="contact-copy">
-                <p class="eyebrow">Započnimo projekat</p>
-                <h2>Imate prostor, ali još ne znate kako da od njega napravite svoj dom?</h2>
-                <p>
-                    Pošaljite osnovne informacije o prostoru i usluzi koja vam
-                    je potrebna. Nakon pregleda upita dobićete predlog narednih koraka.
-                </p>
-            </div>
-
-            <form class="contact-form">
-                <label>
-                    Ime i prezime
-                    <input type="text" name="name" placeholder="Vaše ime">
-                </label>
-                <label>
-                    Email
-                    <input type="email" name="email" placeholder="ime@email.com">
-                </label>
-                <label>
-                    Kvadratura prostora
-                    <input type="text" name="size" placeholder="npr. 75 m²">
-                </label>
-                <label>
-                    O projektu
-                    <textarea name="message" rows="5" placeholder="Napišite ukratko šta želite da uredite."></textarea>
-                </label>
-                <button type="submit" class="button button-primary">Pošaljite upit</button>
-            </form>
-        </section>
-    </main>
-
-    <footer class="site-footer">
-        <div class="footer-brand">
-            <img src="assets/WhatsApp_Image_2026-07-22_at_22.47.04.jpeg" alt="Mia Interior Studio">
-            <p>Enterijeri oblikovani prema ljudima koji u njima žive.</p>
-        </div>
-
-        <div class="footer-links">
-            <a href="#projekti">Projekti</a>
-            <a href="#usluge">Usluge</a>
-            <a href="#proces">Proces</a>
-            <a href="#kontakt">Kontakt</a>
-        </div>
-
-        <div class="footer-contact">
-            <a href="mailto:info@miainteriorstudio.rs">info@miainteriorstudio.rs</a>
-            <a href="#">Instagram</a>
-        </div>
-
-        <small>© 2026 Mia Interior Studio</small>
-    </footer>
-
-    <script src="script.js"></script>
+  <form name="mia-upit" data-netlify="true" hidden>
+    <input type="text" name="ime" />
+    <input type="email" name="email" />
+    <input type="text" name="kvadratura" />
+    <input type="text" name="usluga" />
+    <textarea name="poruka"></textarea>
+  </form>
+  <div id="root"></div>
+  <script type="module" src="/src/main.jsx"></script>
 </body>
 </html>

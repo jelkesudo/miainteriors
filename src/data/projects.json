@@ -1,0 +1,99 @@
+[
+  {
+    "slug": "dom-za-petoclanu-porodicu",
+    "title": "Dom za petočlanu porodicu",
+    "type": "Stan",
+    "area": "75 m²",
+    "location": "Beograd",
+    "year": "2026",
+    "summary": "Topao porodični enterijer u kojem su tri spavaće sobe, odlaganje i zajednička zona rešeni bez osećaja prenatrpanosti.",
+    "challenge": "Organizovati svakodnevni život petočlane porodice u ograničenoj kvadraturi i pritom sačuvati otvoren, miran dnevni prostor.",
+    "solution": "Jasno smo razdvojili privatne i zajedničke zone, ugradili odlaganje tamo gde prirodno nastaje nered i povezali kuhinju, trpezariju i dnevni boravak u jednu funkcionalnu celinu.",
+    "style": "Topao minimalizam sa karakterom",
+    "services": [
+      "Space planning",
+      "Kompletan projekat enterijera",
+      "3D vizualizacije",
+      "Dokumentacija"
+    ],
+    "tone": "warm1",
+    "gallery": [
+      "DNEVNA ZONA",
+      "KUHINJA I TRPEZARIJA",
+      "SPAVAĆA SOBA",
+      "DETALJ MATERIJALA"
+    ]
+  },
+  {
+    "slug": "mirna-osnova-sa-karakterom",
+    "title": "Mirna osnova sa karakterom",
+    "type": "Stan",
+    "area": "55 m²",
+    "location": "Novi Sad",
+    "year": "2026",
+    "summary": "Svetla i smirena osnova sa skrivenim funkcionalnim rešenjima i nekoliko snažnih detalja koji prostoru daju identitet.",
+    "challenge": "Mala kvadratura je morala da dobije više prostora za odlaganje bez vizuelnog opterećenja.",
+    "solution": "Visoke elemente smo integrisali u zidne ravni, oslobodili prolaze i koristili kontinuitet materijala da stan deluje mirnije i prostranije.",
+    "style": "Neutralna baza, prirodni materijali",
+    "services": [
+      "Space planning",
+      "Enterijer",
+      "3D vizualizacije"
+    ],
+    "tone": "warm2",
+    "gallery": [
+      "DNEVNI BORAVAK",
+      "KUHINJA",
+      "RADNI KUTAK",
+      "DETALJ"
+    ]
+  },
+  {
+    "slug": "prostor-povezan-sa-prirodom",
+    "title": "Prostor povezan sa prirodom",
+    "type": "Kuća",
+    "area": "120 m²",
+    "location": "Zlatibor",
+    "year": "2026",
+    "summary": "Enterijer u kojem pogled, dnevno svetlo i prirodni materijali postaju deo svakodnevnog iskustva prostora.",
+    "challenge": "Sačuvati otvorenost prema prirodi, a istovremeno napraviti dovoljno toplu i funkcionalnu kuću za svakodnevni boravak.",
+    "solution": "Glavne vizure smo ostavili otvorenim, nameštaj spustili i smirili, a drvo i teksture koristili kao vezu između enterijera i pejzaža.",
+    "style": "Savremeni prirodni enterijer",
+    "services": [
+      "Kompletan projekat",
+      "3D vizualizacije",
+      "Materijali i rasveta"
+    ],
+    "tone": "warm3",
+    "gallery": [
+      "DNEVNI BORAVAK",
+      "POGLED KA PRIRODI",
+      "TRPEZARIJA",
+      "MATERIJALI"
+    ]
+  },
+  {
+    "slug": "enterijer-koji-prati-brend",
+    "title": "Enterijer koji prati identitet brenda",
+    "type": "Poslovni prostor",
+    "area": "92 m²",
+    "location": "Beograd",
+    "year": "2026",
+    "summary": "Poslovni prostor u kojem tok korisnika, funkcija zaposlenih i identitet brenda rade kao jedna celina.",
+    "challenge": "Napraviti upečatljiv prostor koji ostaje funkcionalan tokom celog radnog dana i ne zavisi od dekoracije da bi imao karakter.",
+    "solution": "Tok korisnika, radne zone i vizuelne tačke planirani su zajedno, a identitet brenda prenet je kroz proporcije, materijale i svetlo.",
+    "style": "Editorial business interior",
+    "services": [
+      "Space planning",
+      "Poslovni enterijer",
+      "3D vizualizacije"
+    ],
+    "tone": "warm4",
+    "gallery": [
+      "ULAZNA ZONA",
+      "RADNA ZONA",
+      "DETALJ BRENDA",
+      "RASVETA"
+    ]
+  }
+]
