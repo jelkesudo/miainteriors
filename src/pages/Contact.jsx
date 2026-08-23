@@ -5,7 +5,6 @@ export default function Contact() {
         <div>
           <p className="eyebrow light">Započnimo projekat</p>
           <h1>Imate prostor. Hajde da vidimo šta sve može da postane.</h1>
-          <p>Pošaljite osnovne informacije. Forma je spremna za Netlify Forms.</p>
         </div>
         <form name="mia-upit" method="POST" data-netlify="true" className="react-contact-form">
           <input type="hidden" name="form-name" value="mia-upit" />
