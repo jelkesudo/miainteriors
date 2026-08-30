@@ -1,20 +1,17 @@
-# Mia Interior Studio — V13
+# Mia Interior Studio — V14 MOBILE FLOW FIX
 
-Promene:
-- posebna `/usluge` stranica je uklonjena
-- `Usluge` u headeru/footeru vodi direktno na odgovarajuću scenu na landing stranici (`/#usluge`)
-- landing više nema `Space planner / Arhitekta enterijera` scenu
-- nema više tehničkog `space planning` jezika kao usluge
-- service scena prati stvarni flow koji je Mia definisala:
-  1. Uvodna konsultacija
-  2. Dogovor + upitnik
-  3. Analiza potreba
-  4. Izrada projekta
-  5. Realizacija
-- dodat tekst koji jasno objašnjava da se saradnja ne prodaje kao generičan paket
-- landing sada ima 7 scena i još je brži za skrolovanje
+Mobile-specific fixes:
+- Services scene no longer squeezes the desktop orbit onto the phone.
+- On phone it becomes a clean 5-step grid under the heading.
+- No icons or labels overlap the title.
+- Process scene now has a smaller questionnaire preview and one centered process card.
+- The preview and process card no longer fight for the same vertical space.
+- Phone scroll distance reduced again to 500vh.
+- Short iPhone heights have their own compact spacing.
 
-Pokretanje:
+Desktop/tablet keep the richer immersive composition.
+
+Run:
 ```bash
 npm install
 npm run dev

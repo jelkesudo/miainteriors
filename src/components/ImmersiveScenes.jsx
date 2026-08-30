@@ -133,13 +133,23 @@ export function ServicesScene({ progress, index, count }) {
           upitnik i analizu definišemo šta vam je zaista potrebno.
         </p>
       </div>
-      <motion.div className="services-ring" style={{ scale:ringScale }}>
+      <motion.div className="services-ring desktop-services-ring" style={{ scale:ringScale }}>
         {serviceData.map(([Icon,title],i)=>(
           <div className={`orbit-service os-${i+1}`} key={title}>
             <Icon strokeWidth={1.25}/><span>{title}</span>
           </div>
         ))}
       </motion.div>
+
+      <div className="mobile-services-grid" aria-label="Koraci saradnje">
+        {serviceData.map(([Icon,title],i)=>(
+          <div className="mobile-service-item" key={title}>
+            <div className="mobile-service-icon"><Icon strokeWidth={1.25}/></div>
+            <span className="mobile-service-number">0{i+1}</span>
+            <strong>{title}</strong>
+          </div>
+        ))}
+      </div>
     </motion.section>
   );
 }
