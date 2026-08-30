@@ -14,8 +14,8 @@ export default function Footer() {
           <div>
             <span className="footer-label">Studio</span>
             <Link to="/projekti">Projekti</Link>
-            <Link to="/usluge">Usluge</Link>
-            <Link to="/vodici">PDF vodiči</Link>
+            <Link to="/#usluge">Usluge</Link>
+            <Link to="/o-nama">O nama</Link>
           </div>
 
           <div>

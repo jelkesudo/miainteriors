@@ -1,18 +1,20 @@
-# Mia Interior Studio — V9 MOBILE POLISH
+# Mia Interior Studio — V13
 
-Ispravljeno prema mobilnim screenshotovima:
-
-- mobilni menu CTA `Pošaljite upit` ima beli tekst i belu ikonicu preko bordo pozadine
-- header koristi transparentni Mia logo, bez belog kvadrata
-- footer koristi transparentni Mia logo
-- footer je kompletno redizajniran: jednostavniji, editorial, dve jasne kolone + tanak bottom bar
-- mobile footer više nije ogroman crni blok sa sitnim linkovima
-- services page na telefonu više nema ogromne 100vh-ish kartice
-- mobile services su kompaktne, vertikalne, sa brojem + ikonicom gore i jasnim naslovom/tekstom ispod
-- tablet footer/services imaju poseban layout
+Promene:
+- posebna `/usluge` stranica je uklonjena
+- `Usluge` u headeru/footeru vodi direktno na odgovarajuću scenu na landing stranici (`/#usluge`)
+- landing više nema `Space planner / Arhitekta enterijera` scenu
+- nema više tehničkog `space planning` jezika kao usluge
+- service scena prati stvarni flow koji je Mia definisala:
+  1. Uvodna konsultacija
+  2. Dogovor + upitnik
+  3. Analiza potreba
+  4. Izrada projekta
+  5. Realizacija
+- dodat tekst koji jasno objašnjava da se saradnja ne prodaje kao generičan paket
+- landing sada ima 7 scena i još je brži za skrolovanje
 
 Pokretanje:
-
 ```bash
 npm install
 npm run dev

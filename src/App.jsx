@@ -4,9 +4,8 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import Home from './pages/Home';
 import Projects from './pages/Projects';
-import Services from './pages/Services';
-import Guides from './pages/Guides';
 import Contact from './pages/Contact';
+import About from './pages/About';
 import ProjectDetail from './pages/ProjectDetail';
 
 function ScrollReset() {
@@ -46,9 +45,8 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/projekti" element={<Projects />} />
         <Route path="/projekti/:slug" element={<ProjectDetail />} />
-        <Route path="/usluge" element={<Services />} />
-        <Route path="/vodici" element={<Guides />} />
         <Route path="/kontakt" element={<Contact />} />
+        <Route path="/o-nama" element={<About />} />
       </Routes>
       {!immersive && <Footer />}
     </>

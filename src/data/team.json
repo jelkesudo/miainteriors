@@ -1,0 +1,23 @@
+[
+  {
+    "name": "Miljana Božić",
+    "role": "Osnivač · master inženjer unutrašnje arhitekture",
+    "bio": "Miljana vodi Mia Interior Studio i spaja space planning sa arhitekturom enterijera. Polazi od načina života, navika i funkcije prostora, a zatim kroz materijale, svetlo i detalje gradi njegov karakter.",
+    "image": "",
+    "label": "DODAJ MILJANINU FOTOGRAFIJU"
+  },
+  {
+    "name": "Saradnik na projektima",
+    "role": "Arhitektonska i tehnička saradnja",
+    "bio": "Ovde dodajte osobu sa kojom Mia sarađuje na razradi projekta, tehničkoj dokumentaciji ili koordinaciji. Sekcija je spremna da dobije stvarno ime, fotografiju i biografiju.",
+    "image": "",
+    "label": "DODAJ FOTOGRAFIJU SARADNIKA"
+  },
+  {
+    "name": "Saradnik na realizaciji",
+    "role": "Izvođenje · materijali · realizacija",
+    "bio": "Mia po potrebi okuplja saradnike koji učestvuju u realizaciji projekta. Ovde se može predstaviti pouzdani izvođač, dizajner nameštaja ili drugi stručnjak koji je deo procesa.",
+    "image": "",
+    "label": "DODAJ FOTOGRAFIJU SARADNIKA"
+  }
+]

@@ -1,8 +1,8 @@
 import { motion, useTransform } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import {
-  Ruler, PenTool, MessageCircle, Box, Building2,
-  Sparkles, FileCheck2, ShoppingBag, ArrowUpRight
+  MessageCircle, ClipboardList, SearchCheck, Palette, Hammer,
+  Sparkles, ArrowUpRight
 } from 'lucide-react';
 import projects from '../data/projects.json';
 
@@ -76,32 +76,6 @@ export function PhilosophyScene({ progress, index, count }) {
   );
 }
 
-export function RoleScene({ progress, index, count }) {
-  const m = useSceneMotion(progress, index, count);
-  const leftX = useTransform(progress, [.22,.31,.36], ['-20vw','0vw','5vw']);
-  const rightX = useTransform(progress, [.22,.31,.36], ['20vw','0vw','-5vw']);
-  return (
-    <motion.section className="immersive-scene scene-role" style={m}>
-      <div className="role-center">
-        <p className="scene-kicker wine">DVE DISCIPLINE · JEDAN PROSTOR</p>
-        <h2>Prvo rešavamo.<br/>Zatim oblikujemo.</h2>
-      </div>
-      <motion.article className="role-float role-left" style={{ x:leftX }}>
-        <Ruler />
-        <span>01</span>
-        <h3>Space planner</h3>
-        <p>Zone, komunikacije, mere, ergonomija i maksimalno korišćenje kvadrature.</p>
-      </motion.article>
-      <motion.article className="role-float role-right" style={{ x:rightX }}>
-        <PenTool />
-        <span>02</span>
-        <h3>Arhitekta enterijera</h3>
-        <p>Materijali, rasveta, nameštaj, atmosfera, 3D i dokumentacija za izvođenje.</p>
-      </motion.article>
-    </motion.section>
-  );
-}
-
 export function ProjectsScene({ progress, index, count }) {
   const m = useSceneMotion(progress, index, count);
   const card1 = useTransform(progress, [.34,.43,.49], [.82,1,1.05]);
@@ -139,22 +113,25 @@ export function ProjectsScene({ progress, index, count }) {
 }
 
 const serviceData = [
-  [Ruler,'Space planning'],
-  [PenTool,'Enterijer'],
-  [MessageCircle,'Konsultacije'],
-  [Box,'3D vizualizacije'],
-  [Building2,'Poslovni prostori'],
+  [MessageCircle,'Uvodna konsultacija'],
+  [ClipboardList,'Dogovor + upitnik'],
+  [SearchCheck,'Analiza potreba'],
+  [Palette,'Izrada projekta'],
+  [Hammer,'Realizacija'],
 ];
 
 export function ServicesScene({ progress, index, count }) {
   const m = useSceneMotion(progress, index, count);
   const ringScale = useTransform(progress, [.45,.55,.63], [.72,1,.88]);
   return (
-    <motion.section className="immersive-scene scene-services" style={m}>
+    <motion.section id="usluge" className="immersive-scene scene-services" style={m}>
       <div className="service-center">
-        <p className="scene-kicker">USLUGE PRILAGOĐENE VAMA</p>
-        <h2>Koliko podrške vam je stvarno potrebno?</h2>
-        <Link className="scene-button" to="/usluge">Pogledajte usluge <ArrowUpRight size={14}/></Link>
+        <p className="scene-kicker">KAKO POČINJE SARADNJA</p>
+        <h2>Od prvog razgovora do realizacije.</h2>
+        <p className="service-center-copy">
+          Ne krećemo od paketa i stručnih termina. Prvo razgovaramo, zatim kroz
+          upitnik i analizu definišemo šta vam je zaista potrebno.
+        </p>
       </div>
       <motion.div className="services-ring" style={{ scale:ringScale }}>
         {serviceData.map(([Icon,title],i)=>(
@@ -168,11 +145,11 @@ export function ServicesScene({ progress, index, count }) {
 }
 
 const process = [
-  ['01','Upoznavanje i brief','Razumemo način života, prostor, rok i budžet.'],
-  ['02','Organizacija prostora','Kvadratura dobija logiku pre estetike.'],
-  ['03','Vizuelni pravac','Materijali, boje i atmosfera postaju jasni.'],
-  ['04','3D vizualizacija','Vidite odluke pre nego što ih platite.'],
-  ['05','Dokumentacija','Majstori dobijaju jasne mere i detalje.'],
+  ['01','Uvodna konsultacija','Pre dogovora prolazimo kroz prostor, vaše potrebe i očekivanja da bismo videli da li je saradnja pravi fit.'],
+  ['02','Dogovor + upitnik','Ako vam pristup odgovara, dogovaramo saradnju i dobijate detaljan upitnik koji nam pomaže da razumemo navike, prioritete i ukus.'],
+  ['03','Analiza odgovora','Mia prolazi kroz odgovore i iz njih izvlači ono što prostor mora funkcionalno i estetski da reši.'],
+  ['04','Termin i izrada','Dogovaramo termin za izradu projekta i ulazimo u razradu rasporeda, koncepta, materijala i vizualizacija.'],
+  ['05','Realizacija','Kada je projekat definisan, prelazimo u realizaciju uz dokumentaciju, dogovorene korake i potrebnu koordinaciju.'],
 ];
 
 export function ProcessScene({ progress, index, count }) {
@@ -182,13 +159,28 @@ export function ProcessScene({ progress, index, count }) {
   const local = useTransform(progress, [sceneStart, sceneEnd], [0, 1]);
 
   return (
-    <motion.section className="immersive-scene scene-process" style={m}>
-      <div className="process-fixed-copy">
-        <p className="scene-kicker wine">KAKO IZGLEDA SARADNJA</p>
-        <h2>Jedan ekran.<br/>Pet jasnih koraka.</h2>
+    <motion.section className="immersive-scene scene-process scene-process-v11" style={m}>
+      <div className="process-fixed-copy process-fixed-copy-v11">
+        <p className="scene-kicker wine">OD PRVOG RAZGOVORA DO REALIZACIJE</p>
+        <h2>Saradnja počinje pre projekta.</h2>
+        <p className="process-intro-text">
+          Prvo proveravamo da li odgovaramo jedni drugima. Tek onda ulazimo u detalje.
+        </p>
+
+        <div className="questionnaire-preview">
+          <img src="/assets/upitnik-preview.webp" alt="Preview upitnika za koncept enterijera" loading="lazy" />
+          <div className="questionnaire-blur-layer" aria-hidden="true"></div>
+          <div className="questionnaire-preview-label">
+            <span>UPITNIK ZA KONCEPT ENTERIJERA</span>
+            <small>Preview dokumenta koji klijent dobija nakon dogovora</small>
+          </div>
+        </div>
       </div>
-      <div className="process-stack">
-        {process.map(([n,title,text],i)=><ProcessCard key={n} local={local} index={i} item={[n,title,text]}/>)}
+
+      <div className="process-stack process-stack-v11">
+        {process.map(([n,title,text],i)=>
+          <ProcessCard key={n} local={local} index={i} item={[n,title,text]}/>
+        )}
       </div>
     </motion.section>
   );
@@ -198,8 +190,9 @@ function ProcessCard({ local, index, item }) {
   const [n,title,text] = item;
   const center = (index + .5) / 5;
   const opacity = useTransform(local, [Math.max(0,center-.18), center-.08, center+.08, Math.min(1,center+.18)], [0,1,1,0]);
-  const scale = useTransform(local, [Math.max(0,center-.18),center,Math.min(1,center+.18)], [.86,1,.9]);
-  const y = useTransform(local, [Math.max(0,center-.18),center,Math.min(1,center+.18)], ['7vh','0vh','-7vh']);
+  const scale = useTransform(local, [Math.max(0,center-.18),center,Math.min(1,center+.18)], [.90,1,.94]);
+  const y = useTransform(local, [Math.max(0,center-.18),center,Math.min(1,center+.18)], ['4vh','0vh','-4vh']);
+
   return (
     <motion.article className="process-card" style={{ opacity,scale,y }}>
       <span>{n}</span><Sparkles/>
@@ -208,6 +201,7 @@ function ProcessCard({ local, index, item }) {
   );
 }
 
+/* PDF / DIGITAL LIBRARY PAUSED — prodaja će za sada ići preko Instagrama.
 export function GuidesScene({ progress, index, count }) {
   const m = useSceneMotion(progress, index, count);
   const z1 = useTransform(progress, [.72,.80,.86], [120,0,-40]);
@@ -230,6 +224,7 @@ export function GuidesScene({ progress, index, count }) {
   );
 }
 
+*/
 export function TestimonialScene({ progress, index, count }) {
   const m = useSceneMotion(progress, index, count);
   const qScale = useTransform(progress, [.82,.90,.94], [.72,1,.94]);

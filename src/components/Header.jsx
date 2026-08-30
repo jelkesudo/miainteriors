@@ -4,8 +4,8 @@ import { Menu, X, ArrowUpRight } from 'lucide-react';
 
 const links = [
   ['/projekti', 'Projekti'],
-  ['/usluge', 'Usluge'],
-  ['/vodici', 'PDF vodiči'],
+  ['/#usluge', 'Usluge'],
+  ['/o-nama', 'O nama'],
   ['/kontakt', 'Kontakt'],
 ];
 
@@ -35,7 +35,9 @@ export default function Header({ immersive = false }) {
 
       <nav className={`desktop-nav ${open ? 'is-open' : ''}`}>
         {links.map(([to, label]) => (
-          <NavLink key={to} to={to} onClick={() => setOpen(false)}>{label}</NavLink>
+          to.includes('#')
+            ? <Link key={to} to={to} onClick={() => setOpen(false)}>{label}</Link>
+            : <NavLink key={to} to={to} onClick={() => setOpen(false)}>{label}</NavLink>
         ))}
         <Link className="header-cta" to="/kontakt" onClick={() => setOpen(false)}>
           Pošaljite upit <ArrowUpRight size={14} />
