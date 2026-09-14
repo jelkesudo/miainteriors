@@ -19,8 +19,14 @@ export default function TestimonialsCarousel({ items }) {
     if (!viewport || !slide) return;
     const viewportWidth = viewport.clientWidth;
     const slideWidth = slide.offsetWidth;
-    const gap = parseFloat(getComputedStyle(trackRef.current).gap || '0');
-    setOffset(viewportWidth / 2 - slideWidth / 2 - active * (slideWidth + gap));
+
+    // Center the real DOM position of the active slide. The carousel gap is
+    // percentage-based (4%), so treating it as a pixel number accumulates an
+    // offset error toward the last slides, especially on mobile. offsetLeft
+    // already includes the browser-resolved gap and keeps first/last slides
+    // aligned exactly like every slide in between.
+    const slideCenter = slide.offsetLeft + slideWidth / 2;
+    setOffset(viewportWidth / 2 - slideCenter);
   };
 
   useLayoutEffect(recalc, [active, items.length]);
