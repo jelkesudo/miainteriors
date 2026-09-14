@@ -48,7 +48,7 @@ export default function App() {
         <Route path="/kontakt" element={<Contact />} />
         <Route path="/o-nama" element={<About />} />
       </Routes>
-      {!immersive && <Footer />}
+      <Footer />
     </>
   );
 }

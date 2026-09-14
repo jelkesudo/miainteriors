@@ -29,7 +29,7 @@ export default function Footer() {
 
       <div className="footer-v9-bottom">
         <span>© 2026 Mia Interior Studio</span>
-        <span>Interior architecture · Space planning</span>
+        <span>Arhitektura enterijera · Savetovanje · Projekti</span>
       </div>
     </footer>
   );

@@ -1,23 +1,14 @@
 [
   {
     "name": "Miljana Božić",
-    "role": "Osnivač · master inženjer unutrašnje arhitekture",
-    "bio": "Miljana vodi Mia Interior Studio i spaja space planning sa arhitekturom enterijera. Polazi od načina života, navika i funkcije prostora, a zatim kroz materijale, svetlo i detalje gradi njegov karakter.",
-    "image": "",
-    "label": "DODAJ MILJANINU FOTOGRAFIJU"
+    "role": "Osnivač | Master inženjer unutrašnje arhitekture",
+    "bio": "Miljana Božić je osnivač studija MIA Interior Studio. Osnovne i master studije završila je na Arhitektonskom fakultetu Univerziteta u Beogradu, gde je stekla zvanje master inženjera unutrašnje arhitekture. Njeno interesovanje za enterijer proisteklo je iz istraživanja načina na koji prostor utiče na čovekovo ponašanje, emocije i svakodnevni život, čime se bavila i u svom master radu. U projektovanju spaja arhitekturu i psihologiju, a inspiraciju pronalazi u prirodi, prirodnom svetlu i mekim, organskim formama. Svakom projektu pristupa polazeći od ljudi, njihovih navika i potreba, verujući da dobar enterijer ne treba samo lepo da izgleda, već i da pruža osećaj pripadnosti.",
+    "image": "/assets/team/miljana.webp"
   },
   {
-    "name": "Saradnik na projektima",
-    "role": "Arhitektonska i tehnička saradnja",
-    "bio": "Ovde dodajte osobu sa kojom Mia sarađuje na razradi projekta, tehničkoj dokumentaciji ili koordinaciji. Sekcija je spremna da dobije stvarno ime, fotografiju i biografiju.",
-    "image": "",
-    "label": "DODAJ FOTOGRAFIJU SARADNIKA"
-  },
-  {
-    "name": "Saradnik na realizaciji",
-    "role": "Izvođenje · materijali · realizacija",
-    "bio": "Mia po potrebi okuplja saradnike koji učestvuju u realizaciji projekta. Ovde se može predstaviti pouzdani izvođač, dizajner nameštaja ili drugi stručnjak koji je deo procesa.",
-    "image": "",
-    "label": "DODAJ FOTOGRAFIJU SARADNIKA"
+    "name": "Ognjen Bojić",
+    "role": "Suosnivač | Master inženjer arhitekture",
+    "bio": "Ognjen je suosnivač studija MIA Interior Studio i master inženjer arhitekture. Osnovne i master studije završio je na Arhitektonskom fakultetu Univerziteta u Beogradu. Kao tehnički oslonac tima, ideje pretvara u precizna, funkcionalna i izvodljiva arhitektonska rešenja. Njegov projektantski senzibilitet prepoznaje se u čistim linijama, snažnoj geometriji i jasno definisanim odnosima u prostoru. Avanturistički duh i radoznalost podstiču ga da istražuje nove mogućnosti, ali svako rešenje uvek proverava kroz funkciju, proporciju i logiku izvođenja.",
+    "image": "/assets/team/ognjen.webp"
   }
 ]

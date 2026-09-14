@@ -1,0 +1,60 @@
+[
+  {
+    "slug": "savetovanje",
+    "title": "Savetovanje",
+    "description": "Zamisli ga kao razgovor sa drugaricom arhitektom kojoj možeš da postaviš sve što te muči u vezi sa prostorom. Namenjeno je situacijama u kojima ti ne treba ceo projekat, već stručno mišljenje pre nego što doneseš konkretnu odluku ili potrošiš novac na nešto što možda neće funkcionisati.",
+    "includes": [
+      "60 minuta online razgovora",
+      "savete za jednu konkretnu prostoriju",
+      "konkretne smernice i pisani sažetak razgovora"
+    ],
+    "price": "50 €",
+    "cta": "Zakaži savetovanje"
+  },
+  {
+    "slug": "plan-uredjenja",
+    "title": "Plan uređenja jedne prostorije",
+    "description": "Namenjen je tebi ako želiš da urediš jednu prostoriju, ali ne znaš kako da rasporediš nameštaj i povežeš boje i materijale u skladnu celinu. Dobićeš jasno rešenje prilagođeno svom prostoru, navikama i budžetu.",
+    "note": "Ne uključuje fotorealistične prikaze, shopping liste i tehničku dokumentaciju za izvođenje radova.",
+    "includes": [
+      "do 120 minuta online razgovora",
+      "predlog rasporeda nameštaja sa potrebnim dimenzijama",
+      "moodboard sa stilom, bojama i materijalima",
+      "finalnu PDF prezentaciju u roku od sedam dana"
+    ],
+    "price": "150 €",
+    "cta": "Želim plan uređenja"
+  },
+  {
+    "slug": "online-koncept",
+    "title": "Online koncept enterijera",
+    "description": "Namenjen je uređenju jedne prostorije u kojoj nisu planirane promene zidova, instalacija i drugih građevinskih elemenata. Pored funkcionalnog rasporeda i stilskog pravca, dobićeš realističan prikaz budućeg prostora i konkretan spisak nameštaja i rasvete.",
+    "includes": [
+      "raspored nameštaja sa pozicijama i dimenzijama",
+      "pet fotorealističnih prikaza",
+      "interaktivni prikaz od 360°",
+      "shopping listu rasvete i komadnog nameštaja",
+      "jedan krug manjih korekcija",
+      "finalnu PDF dokumentaciju"
+    ],
+    "price": "359 € do 12 m² · 30 €/m² preko 12 m²",
+    "period": "Rok izrade: 14 dana",
+    "cta": "Želim ovo"
+  },
+  {
+    "slug": "projekat-enterijera",
+    "title": "Projekat enterijera",
+    "description": "Namenjen je tebi ako planiraš ozbiljnije uređenje ili adaptaciju i potrebna ti je projektantska podrška na terenu. Nakon merenja prostora izrađujemo funkcionalno rešenje prilagođeno tvojim potrebama, dok nivo vizuelne i tehničke razrade biraš kroz BASIC, STANDARD ili PREMIUM paket.",
+    "includes": [
+      "izlazak na teren i precizno merenje prostora",
+      "do tri predloga novog rasporeda",
+      "koncept boja i materijala",
+      "shopping listu",
+      "3D prikaze i planove instalacija",
+      "tehničke crteže za izvođenje i nameštaj po meri",
+      "podršku tokom realizacije"
+    ],
+    "price": "Cena prema obimu i paketu",
+    "cta": "Pošalji upit"
+  }
+]

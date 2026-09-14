@@ -1,10 +1,15 @@
-import { motion, useTransform } from 'framer-motion';
+import { useState } from 'react';
+import { AnimatePresence, motion, useMotionValueEvent, useTransform } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import {
-  MessageCircle, ClipboardList, SearchCheck, Palette, Hammer,
+  MessageCircle, LayoutPanelTop, MonitorUp, DraftingCompass,
   Sparkles, ArrowUpRight
 } from 'lucide-react';
 import projects from '../data/projects.json';
+import services from '../data/services.json';
+import process from '../data/process.json';
+import testimonials from '../data/testimonials.json';
+import TestimonialsCarousel from './TestimonialsCarousel';
 
 const clamp = (v, min, max) => Math.max(min, Math.min(max, v));
 
@@ -40,19 +45,14 @@ export function HeroScene({ progress, index, count }) {
   return (
     <motion.section className="immersive-scene scene-hero" style={m}>
       <div className="scene-glow glow-one" />
-      <motion.img
-        className="hero-mark"
-        src="/assets/mia-logo-hero.webp"
-        alt="Mia Interior Studio"
-        width="900"
-        height="900"
-        style={{ scale: logoScale, y: logoY }}
-        fetchPriority="high"
-      />
+      <motion.picture className="hero-mark hero-mark-v19" style={{ scale: logoScale, y: logoY }}>
+        <source media="(max-width: 560px)" srcSet="/assets/mia_logo_bordo.png" />
+        <img src="/assets/mia-logo-hero.webp" alt="Mia Interior Studio" width="900" height="900" fetchPriority="high" />
+      </motion.picture>
       <div className="hero-scene-copy">
-        <p className="scene-kicker">INTERIOR ARCHITECTURE · SPACE PLANNING</p>
-        <h1>Prostor koji ne izgleda samo lepo.<em>Prostor u kojem prepoznajete sebe.</em></h1>
-        <p>Skrolujte. Stranica ostaje na mestu — ideja se menja pred vama.</p>
+        <p className="scene-kicker">MIA INTERIOR STUDIO</p>
+        <h1>Dve estetike.<em>Jedan dom.</em></h1>
+        <p>Prostor koji spaja različite želje u celinu u kojoj se oboje prepoznajete.</p>
       </div>
       <div className="scroll-hint"><span>SCROLL</span><i /></div>
     </motion.section>
@@ -99,7 +99,7 @@ export function ProjectsScene({ progress, index, count }) {
           return (
             <motion.div className={`project-frame ${classes[i]}`} style={{ scale: scales[i] }} key={project.slug}>
               <Link to={`/projekti/${project.slug}`} className="project-frame-link">
-                <div className={`fake-image ${project.tone}`}>DODAJ SLIKU</div>
+                <img className="project-frame-image" src={project.cover} alt={project.title} loading="lazy" />
                 <small>{project.type.toUpperCase()} · {project.area}</small>
                 <strong>{project.title}</strong>
                 <span className="project-open">Otvori projekat ↗</span>
@@ -112,102 +112,117 @@ export function ProjectsScene({ progress, index, count }) {
   );
 }
 
-const serviceData = [
-  [MessageCircle,'Uvodna konsultacija'],
-  [ClipboardList,'Dogovor + upitnik'],
-  [SearchCheck,'Analiza potreba'],
-  [Palette,'Izrada projekta'],
-  [Hammer,'Realizacija'],
-];
+const serviceIcons = [MessageCircle, LayoutPanelTop, MonitorUp, DraftingCompass];
 
 export function ServicesScene({ progress, index, count }) {
   const m = useSceneMotion(progress, index, count);
-  const ringScale = useTransform(progress, [.45,.55,.63], [.72,1,.88]);
+
   return (
-    <motion.section id="usluge" className="immersive-scene scene-services" style={m}>
-      <div className="service-center">
-        <p className="scene-kicker">KAKO POČINJE SARADNJA</p>
-        <h2>Od prvog razgovora do realizacije.</h2>
+    <motion.section id="usluge" className="immersive-scene scene-services scene-services-v17" style={m}>
+      <div className="service-center service-center-v17">
+        <p className="scene-kicker">USLUGE</p>
+        <h2>Koliko podrške vam je potrebno?</h2>
         <p className="service-center-copy">
-          Ne krećemo od paketa i stručnih termina. Prvo razgovaramo, zatim kroz
-          upitnik i analizu definišemo šta vam je zaista potrebno.
+          Od stručnog mišljenja o konkretnoj dilemi do kompletne adaptacije i tehničke razrade enterijera.
         </p>
       </div>
-      <motion.div className="services-ring desktop-services-ring" style={{ scale:ringScale }}>
-        {serviceData.map(([Icon,title],i)=>(
-          <div className={`orbit-service os-${i+1}`} key={title}>
-            <Icon strokeWidth={1.25}/><span>{title}</span>
-          </div>
-        ))}
-      </motion.div>
 
-      <div className="mobile-services-grid" aria-label="Koraci saradnje">
-        {serviceData.map(([Icon,title],i)=>(
-          <div className="mobile-service-item" key={title}>
-            <div className="mobile-service-icon"><Icon strokeWidth={1.25}/></div>
-            <span className="mobile-service-number">0{i+1}</span>
-            <strong>{title}</strong>
-          </div>
+      <div className="services-summary-grid">
+        {services.map((service, i) => (
+          <article className="service-summary-card" key={service.slug}>
+            <div className="service-summary-number">0{i + 1}</div>
+            <div>
+              <h3>{service.title}</h3>
+              <p>{service.description}</p>
+            </div>
+            <strong>{service.price}</strong>
+          </article>
         ))}
+      </div>
+
+      <div className="services-cta-inline">
+        <div>
+          <span>Imaš ideju za svoj prostor?</span>
+          <p>Pošalji nam osnovne informacije i predložićemo ti koji nivo usluge ima najviše smisla.</p>
+        </div>
+        <Link className="scene-button wine-button" to="/kontakt">
+          Pošalji nam upit <ArrowUpRight size={14}/>
+        </Link>
       </div>
     </motion.section>
   );
 }
 
-const process = [
-  ['01','Uvodna konsultacija','Pre dogovora prolazimo kroz prostor, vaše potrebe i očekivanja da bismo videli da li je saradnja pravi fit.'],
-  ['02','Dogovor + upitnik','Ako vam pristup odgovara, dogovaramo saradnju i dobijate detaljan upitnik koji nam pomaže da razumemo navike, prioritete i ukus.'],
-  ['03','Analiza odgovora','Mia prolazi kroz odgovore i iz njih izvlači ono što prostor mora funkcionalno i estetski da reši.'],
-  ['04','Termin i izrada','Dogovaramo termin za izradu projekta i ulazimo u razradu rasporeda, koncepta, materijala i vizualizacija.'],
-  ['05','Realizacija','Kada je projekat definisan, prelazimo u realizaciju uz dokumentaciju, dogovorene korake i potrebnu koordinaciju.'],
-];
 
 export function ProcessScene({ progress, index, count }) {
   const m = useSceneMotion(progress, index, count);
   const sceneStart = index / count;
   const sceneEnd = (index + 1) / count;
-  const local = useTransform(progress, [sceneStart, sceneEnd], [0, 1]);
+  const local = useTransform(progress, [sceneStart, sceneEnd], [0, 0.999]);
+  const [activeStep, setActiveStep] = useState(0);
+
+  useMotionValueEvent(local, 'change', (value) => {
+    const next = Math.min(process.length - 1, Math.floor(value * process.length));
+    setActiveStep((current) => current === next ? current : next);
+  });
+
+  const item = process[activeStep];
 
   return (
-    <motion.section className="immersive-scene scene-process scene-process-v11" style={m}>
-      <div className="process-fixed-copy process-fixed-copy-v11">
-        <p className="scene-kicker wine">OD PRVOG RAZGOVORA DO REALIZACIJE</p>
-        <h2>Saradnja počinje pre projekta.</h2>
+    <motion.section className="immersive-scene scene-process scene-process-v17" style={m}>
+      <div className="process-fixed-copy process-fixed-copy-v17">
+        <p className="scene-kicker wine">OD PRVE PORUKE DO PROSTORA PO TVOJOJ MERI</p>
+        <h2>Svaki dobar prostor počinje razgovorom.</h2>
         <p className="process-intro-text">
-          Prvo proveravamo da li odgovaramo jedni drugima. Tek onda ulazimo u detalje.
+          Od samog početka znaš šta možeš da očekuješ i koji je sledeći korak.
         </p>
 
-        <div className="questionnaire-preview">
-          <img src="/assets/upitnik-preview.webp" alt="Preview upitnika za koncept enterijera" loading="lazy" />
+        <div className="process-progress-v17">
+          {process.map((step, i) => (
+            <span key={step.number} className={i <= activeStep ? 'is-active' : ''}>
+              {step.number}
+            </span>
+          ))}
+        </div>
+
+        <div className="questionnaire-preview process-document-preview">
+          <img src="/assets/upitnik-preview.webp" alt="Upitnik za koncept enterijera" loading="lazy" />
           <div className="questionnaire-blur-layer" aria-hidden="true"></div>
           <div className="questionnaire-preview-label">
             <span>UPITNIK ZA KONCEPT ENTERIJERA</span>
-            <small>Preview dokumenta koji klijent dobija nakon dogovora</small>
+            <small>Primer dokumenta koji koristimo u procesu razumevanja prostora</small>
           </div>
         </div>
       </div>
 
-      <div className="process-stack process-stack-v11">
-        {process.map(([n,title,text],i)=>
-          <ProcessCard key={n} local={local} index={i} item={[n,title,text]}/>
-        )}
+      <div className="process-stage-v17">
+        <AnimatePresence mode="wait">
+          <motion.article
+            className="process-card process-card-v17"
+            key={item.number}
+            initial={{ opacity: 0, y: 24, scale: .985 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: -18, scale: .99 }}
+            transition={{ duration: .22, ease: 'easeOut' }}
+          >
+            <span>{item.number}</span>
+            <Sparkles/>
+            <h3>{item.title}</h3>
+            <p>{item.text}</p>
+            {item.number === '02' && (
+              <Link className="process-inline-link" to="/kontakt?usluga=savetovanje">
+                Zakaži savetovanje ↗
+              </Link>
+            )}
+          </motion.article>
+        </AnimatePresence>
+      </div>
+
+      <div className="process-final-cta-v17">
+        <span>Spremni za prvi korak?</span>
+        <Link to="/kontakt">Ispričaj nam o svom prostoru <ArrowUpRight size={14}/></Link>
       </div>
     </motion.section>
-  );
-}
-
-function ProcessCard({ local, index, item }) {
-  const [n,title,text] = item;
-  const center = (index + .5) / 5;
-  const opacity = useTransform(local, [Math.max(0,center-.18), center-.08, center+.08, Math.min(1,center+.18)], [0,1,1,0]);
-  const scale = useTransform(local, [Math.max(0,center-.18),center,Math.min(1,center+.18)], [.90,1,.94]);
-  const y = useTransform(local, [Math.max(0,center-.18),center,Math.min(1,center+.18)], ['4vh','0vh','-4vh']);
-
-  return (
-    <motion.article className="process-card" style={{ opacity,scale,y }}>
-      <span>{n}</span><Sparkles/>
-      <h3>{title}</h3><p>{text}</p>
-    </motion.article>
   );
 }
 
@@ -237,14 +252,14 @@ export function GuidesScene({ progress, index, count }) {
 */
 export function TestimonialScene({ progress, index, count }) {
   const m = useSceneMotion(progress, index, count);
-  const qScale = useTransform(progress, [.82,.90,.94], [.72,1,.94]);
+
   return (
-    <motion.section className="immersive-scene scene-testimonial" style={m}>
-      <motion.div className="testimonial-card" style={{ scale:qScale }}>
-        <span className="quote">“</span>
-        <blockquote>Najviše nam je značilo što projekat nije krenuo od toga šta je moderno, nego od toga kako nas petoro stvarno funkcionišemo u stanu.</blockquote>
-        <strong>Ana & Marko</strong><small>Porodični stan · demo testimonial</small>
-      </motion.div>
+    <motion.section className="immersive-scene scene-testimonial scene-testimonial-v17" style={m}>
+      <div className="testimonial-scene-heading">
+        <p className="scene-kicker wine">UTISCI KLIJENATA</p>
+        <h2>Kako saradnja izgleda sa druge strane.</h2>
+      </div>
+      <TestimonialsCarousel items={testimonials} compact />
     </motion.section>
   );
 }
@@ -263,7 +278,7 @@ export function ContactScene({ progress, index, count }) {
       <div className="contact-center">
         <p className="scene-kicker wine">ZAPOČNIMO PROJEKAT</p>
         <h2>Imate prostor.<br/>Hajde da vidimo šta sve može da postane.</h2>
-        <p className="contact-final-copy">Mia Interior Studio · space planning · arhitektura enterijera · konsultacije</p>
+        <p className="contact-final-copy">Mia Interior Studio · savetovanje · plan uređenja · online koncept · projekat enterijera</p>
         <div className="contact-final-actions">
           <Link className="scene-button wine-button" to="/kontakt">Pošaljite upit <ArrowUpRight size={15}/></Link>
           <Link className="scene-text-link" to="/projekti">Pogledajte projekte</Link>

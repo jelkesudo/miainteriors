@@ -1,6 +1,7 @@
 import { Link, useParams } from 'react-router-dom';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 import projects from '../data/projects.json';
+import ProjectGalleryLightbox from '../components/ProjectGalleryLightbox';
 
 export default function ProjectDetail() {
   const { slug } = useParams();
@@ -21,70 +22,62 @@ export default function ProjectDetail() {
 
   const prev = projects[(projectIndex - 1 + projects.length) % projects.length];
   const next = projects[(projectIndex + 1) % projects.length];
+  const facts = [
+    ['Lokacija', project.location],
+    ['Površina', project.area],
+    ['Godina', project.year],
+    ['Budžet', project.budget],
+    ['Realizacija', project.period],
+    ['Obim', project.scope],
+  ].filter(([, value]) => value);
+
+  const gallery = project.gallery?.length ? project.gallery : [project.cover];
 
   return (
-    <main className="route-page project-detail-v5">
-      <section className="project-detail-hero page-shell">
+    <main className="route-page project-detail-v18">
+      <section className="project-detail-hero-v18 page-shell">
         <Link className="project-back-link" to="/projekti"><ArrowLeft size={15}/> Svi projekti</Link>
+        <p className="eyebrow project-detail-kicker-v18">{project.type}{project.area ? ` · ${project.area}` : ''}</p>
 
-        <div className="project-detail-title">
-          <div>
-            <p className="eyebrow">{project.type} · {project.area}</p>
-            <h1>{project.title}</h1>
-          </div>
-
-          <div className="project-facts">
-            <div><span>Lokacija</span><strong>{project.location}</strong></div>
-            <div><span>Godina</span><strong>{project.year}</strong></div>
-            <div><span>Karakter</span><strong>{project.style}</strong></div>
+        <div className="project-detail-title-v18">
+          <h1>{project.title}</h1>
+          <div className="project-facts-v18">
+            {facts.map(([label, value]) => (
+              <div key={label}><span>{label}</span><strong>{value}</strong></div>
+            ))}
           </div>
         </div>
       </section>
 
       <section className="project-detail-main-image page-shell">
-        <div className={`classic-project-image detail-main ${project.tone}`}>
-          <span>DODAJ GLAVNI RENDER / FOTOGRAFIJU</span>
-        </div>
+        <button className="project-cover-button-v18" type="button" aria-label="Pogledaj galeriju" onClick={() => document.querySelector('.project-gallery-thumb-v18')?.click()}>
+          <img className="project-detail-cover" src={project.cover} alt={project.title} />
+          <span>Pogledaj galeriju ↗</span>
+        </button>
       </section>
 
-      <section className="project-detail-story page-shell">
+      <section className="project-detail-story-v18 page-shell">
         <div>
-          <p className="eyebrow">Kontekst projekta</p>
-          <h2>Prostor mora prvo da reši stvaran život.</h2>
+          <p className="eyebrow">Priča projekta</p>
+          <h2>Rešenje koje polazi od načina na koji se prostor zaista koristi.</h2>
         </div>
-        <p>{project.summary}</p>
+        <p>{project.description}</p>
       </section>
 
-      <section className="project-detail-two-col page-shell">
-        <article>
-          <span className="detail-number">01</span>
-          <p className="eyebrow">Izazov</p>
-          <h3>Šta je trebalo rešiti?</h3>
-          <p>{project.challenge}</p>
-        </article>
+      {project.testimonial && (
+        <section className="project-testimonial-v18 page-shell">
+          <span>“</span>
+          <blockquote>{project.testimonial.text}</blockquote>
+          <strong>{project.testimonial.name}</strong>
+        </section>
+      )}
 
-        <article>
-          <span className="detail-number">02</span>
-          <p className="eyebrow">Rešenje</p>
-          <h3>Kako smo odgovorili?</h3>
-          <p>{project.solution}</p>
-        </article>
-      </section>
-
-      <section className="project-detail-services page-shell">
-        <p className="eyebrow">Obim saradnje</p>
-        <div>
-          {project.services.map(service => <span key={service}>{service}</span>)}
-        </div>
-      </section>
-
-      <section className="project-detail-gallery page-shell">
-        {project.gallery.map((label, index) => (
-          <div className={`classic-project-image gallery-${index+1} ${project.tone}`} key={label}>
-            <span>{label} · DODAJ SLIKU</span>
-          </div>
-        ))}
-      </section>
+      <div className="project-gallery-heading-v18 page-shell">
+        <p className="eyebrow">Galerija</p>
+        <h2>Detalji projekta.</h2>
+        <p>Klikni na bilo koju sliku za prikaz preko celog ekrana.</p>
+      </div>
+      <ProjectGalleryLightbox images={gallery} title={project.title} />
 
       <section className="project-detail-nav page-shell">
         <Link to={`/projekti/${prev.slug}`}>
