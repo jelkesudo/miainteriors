@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import "./ThankYou.css";
 
 export default function ThankYou() {
@@ -19,10 +18,10 @@ export default function ThankYou() {
           Javićemo ti se uskoro sa predlogom sledećeg koraka.
         </p>
 
-        <Link to="/" className="thank-you-button">
+        <a href="/" className="thank-you-button">
           NAZAD NA POČETNU
           <span aria-hidden="true">↗</span>
-        </Link>
+        </a>
       </div>
     </main>
   );
