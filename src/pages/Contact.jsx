@@ -17,7 +17,7 @@ export default function Contact() {
           </p>
         </div>
 
-        <form name="mia-upit" method="POST" data-netlify="true" className="react-contact-form">
+        <form name="mia-upit" method="POST" netlify data-netlify="true" className="react-contact-form">
           <input type="hidden" name="form-name" value="mia-upit" />
           <label>Ime i prezime<input name="ime" required /></label>
           <label>Email adresa<input name="email" type="email" required /></label>
