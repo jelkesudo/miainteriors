@@ -5087,3 +5087,402 @@ html, body {
     -webkit-line-clamp: 1;
   }
 }
+
+/* ============================================================
+   V20 — NORMAL FLOW + SPACIOUS EASE-IN REVEALS
+   Replaces the old full-screen parallax story on the homepage.
+   ============================================================ */
+.home-ease-v20{overflow:clip;background:var(--cream)}
+.home-ease-v20 .ease-reveal{width:100%}
+.ease-hero{position:relative;min-height:100svh;min-height:100dvh;overflow:hidden;background:var(--cream);border-bottom:1px solid var(--line)}
+.ease-hero-logo-wrap{position:absolute;left:68%;top:50%;width:min(34vw,520px);height:min(50vw,520px);transform:translate(-50%,-50%);display:grid;place-items:center}
+.ease-hero-logo{display:block;width:100%;height:100%;object-fit:contain;object-position:center}
+.ease-hero-copy{left:max(40px,calc((100vw - 1400px)/2))!important;bottom:10vh!important;width:min(520px,38vw)!important}
+.ease-hero-copy h1{font-size:clamp(64px,5.5vw,92px)!important;line-height:.92!important}
+.ease-philosophy{position:relative;min-height:82vh;display:grid;place-items:center;padding:150px 40px;overflow:hidden;border-bottom:1px solid var(--line)}
+.ease-giant-word{opacity:.045;transform:scale(.9)}
+.home-ease-v20 .landing-section{padding:160px 0!important}
+.home-ease-v20 .landing-shell{width:min(calc(100% - 120px),1400px)!important}
+.home-ease-v20 .landing-section-head{margin-bottom:72px!important}
+.home-ease-v20 .featured-projects-grid-v18{gap:36px!important}
+.home-ease-v20 .featured-project-copy-v18{padding:30px 28px 34px!important}
+.home-ease-v20 .services-layout-v18{gap:88px 110px!important}
+.home-ease-v20 .services-cards-v18{gap:24px!important}
+.home-ease-v20 .service-card-v18{min-height:330px!important;padding:34px!important}
+.home-ease-v20 .services-cta-v18{margin-top:12px;padding-top:54px!important}
+.home-ease-v20 .process-layout-v18{gap:110px!important}
+.home-ease-v20 .process-intro-v18{position:relative!important;top:auto!important}
+.home-ease-v20 .process-step-v18{padding:48px 0!important}
+.home-ease-v20 .landing-testimonials-section{padding-top:170px!important;padding-bottom:170px!important}
+.home-ease-v20 .landing-contact-v18{min-height:78vh!important;height:auto!important;padding:150px 0!important;display:flex!important;align-items:center!important;overflow:visible!important}
+
+@media(max-width:1000px){
+  .ease-hero-logo-wrap{left:69%;width:min(40vw,430px);height:min(40vw,430px)}
+  .ease-hero-copy{left:40px!important;width:44vw!important}
+  .home-ease-v20 .landing-section{padding:120px 0!important}
+  .home-ease-v20 .landing-shell{width:min(calc(100% - 64px),1400px)!important}
+  .home-ease-v20 .services-layout-v18,.home-ease-v20 .process-layout-v18{gap:60px!important}
+}
+
+@media(max-width:560px){
+  .ease-hero{min-height:100svh;min-height:100dvh;padding-top:68px}
+  .ease-hero-logo-wrap{left:50%;top:34%;width:min(58vw,230px);height:min(58vw,230px)}
+  .ease-hero-copy{left:22px!important;right:22px!important;bottom:9vh!important;width:auto!important}
+  .ease-hero-copy h1{font-size:48px!important}
+  .ease-philosophy{min-height:auto;padding:120px 22px}
+  .home-ease-v20 .landing-section{padding:105px 0!important}
+  .home-ease-v20 .landing-shell{width:calc(100% - 38px)!important}
+  .home-ease-v20 .landing-section-head{margin-bottom:42px!important}
+  .home-ease-v20 .featured-projects-grid-v18{display:grid!important;grid-template-columns:1fr!important;grid-template-rows:none!important;gap:28px!important;overflow:visible!important}
+  .home-ease-v20 .featured-project-card-v18{display:block!important;height:auto!important;grid-template-columns:none!important}
+  .home-ease-v20 .featured-project-image-v18{height:auto!important;aspect-ratio:4/3!important}
+  .home-ease-v20 .featured-project-copy-v18{padding:24px 22px 27px!important}
+  .home-ease-v20 .services-cards-v18{grid-template-columns:1fr!important;gap:18px!important;margin-top:36px!important}
+  .home-ease-v20 .service-card-v18{min-height:250px!important;padding:26px!important}
+  .home-ease-v20 .service-card-v18 p{display:block!important;overflow:visible!important;-webkit-line-clamp:unset!important;font-size:13px!important;line-height:1.55!important}
+  .home-ease-v20 .services-cta-v18{margin-top:34px!important;padding-top:36px!important;gap:26px!important}
+  .home-ease-v20 .process-layout-v18{display:block!important}
+  .home-ease-v20 .process-intro-v18{margin-bottom:56px!important}
+  .home-ease-v20 .process-step-v18{padding:34px 0!important}
+  .home-ease-v20 .landing-testimonials-section{padding-top:110px!important;padding-bottom:120px!important}
+  .home-ease-v20 .landing-contact-v18{min-height:auto!important;padding:120px 0!important}
+}
+
+@media(prefers-reduced-motion:reduce){
+  .home-ease-v20 .ease-reveal,.home-ease-v20 [style]{transition:none!important;animation:none!important}
+}
+
+/* ============================================================
+   V22 — desktop composition restored from approved references.
+   Normal document flow + reveal motion stays; only sizing/layout
+   is brought back to the balanced pre-parallax compositions.
+   ============================================================ */
+@media (min-width:1001px){
+  /* Hero: logo centered in the viewport, copy anchored lower-left. */
+  .ease-hero-logo-wrap{
+    left:50%!important;
+    top:43%!important;
+    width:min(31vw,500px)!important;
+    height:min(31vw,500px)!important;
+  }
+  .ease-hero-copy{
+    left:max(40px,calc((100vw - 1400px)/2))!important;
+    bottom:8vh!important;
+    width:min(520px,38vw)!important;
+  }
+
+  /* Keep the approved content scale instead of stretching sections. */
+  .home-ease-v20 .landing-shell{
+    width:min(calc(100% - 80px),1400px)!important;
+  }
+  .home-ease-v20 .landing-section{
+    padding:110px 0!important;
+  }
+
+  /* Services: compact 2x2 composition + CTA in the same visual block. */
+  .home-ease-v20 .landing-services-section{
+    padding:92px 0 88px!important;
+  }
+  .home-ease-v20 .services-layout-v18{
+    grid-template-columns:.72fr 1.28fr!important;
+    gap:58px 72px!important;
+    align-items:center!important;
+  }
+  .home-ease-v20 .services-intro-v18{padding-top:0!important}
+  .home-ease-v20 .services-intro-v18 h2{
+    font-size:clamp(56px,5.35vw,82px)!important;
+  }
+  .home-ease-v20 .services-cards-v18{gap:16px!important}
+  .home-ease-v20 .service-card-v18{
+    min-height:248px!important;
+    padding:26px!important;
+  }
+  .home-ease-v20 .service-card-v18 h3{
+    margin:28px 0 10px!important;
+    font-size:34px!important;
+  }
+  .home-ease-v20 .service-card-v18 strong{margin-top:22px!important}
+  .home-ease-v20 .services-cta-v18{
+    margin-top:0!important;
+    padding-top:34px!important;
+  }
+
+  /* Process: approved left intro + four equal cards in a 2x2 grid. */
+  .home-ease-v20 .landing-process-section{
+    padding:105px 0 115px!important;
+  }
+  .home-ease-v20 .process-layout-v18{
+    grid-template-columns:.74fr 1.26fr!important;
+    gap:70px!important;
+    align-items:center!important;
+  }
+  .home-ease-v20 .process-intro-v18{
+    position:relative!important;
+    top:auto!important;
+  }
+  .home-ease-v20 .process-intro-v18 h2{
+    font-size:clamp(54px,5vw,76px)!important;
+  }
+  .home-ease-v20 .questionnaire-preview-v18{
+    width:min(390px,100%)!important;
+    margin-top:28px!important;
+  }
+  .home-ease-v20 .process-steps-v18{
+    display:grid!important;
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    gap:16px!important;
+    border-top:0!important;
+  }
+  .home-ease-v20 .process-step-v18{
+    min-height:245px!important;
+    padding:28px 26px!important;
+    display:grid!important;
+    grid-template-columns:48px 1fr!important;
+    gap:16px!important;
+    align-content:start!important;
+    border:1px solid var(--line)!important;
+    background:rgba(255,250,242,.38)!important;
+  }
+  .home-ease-v20 .process-step-number-v18{
+    font-size:27px!important;
+  }
+  .home-ease-v20 .process-step-v18 h3{
+    margin:0 0 13px!important;
+    font-size:34px!important;
+    line-height:1!important;
+  }
+  .home-ease-v20 .process-step-v18 p{
+    font-size:12px!important;
+    line-height:1.62!important;
+  }
+
+  /* Final CTA: large burgundy field, content centered both ways. */
+  .home-ease-v20 .landing-contact-v18{
+    min-height:calc(100vh - 76px)!important;
+    padding:90px 0!important;
+    display:flex!important;
+    align-items:center!important;
+  }
+  .home-ease-v20 .landing-contact-inner-v18{
+    width:min(calc(100% - 80px),1400px)!important;
+    margin-inline:auto!important;
+    text-align:center!important;
+  }
+  .home-ease-v20 .landing-contact-inner-v18 h2{
+    max-width:980px!important;
+    font-size:clamp(62px,6vw,92px)!important;
+    line-height:.91!important;
+  }
+}
+
+/* ============================================================
+   V23 — exact approved hero + final CTA composition references.
+   ============================================================ */
+@media (min-width:1001px){
+  /* The approved hero uses the visually centered logo artwork. */
+  .home-ease-v20 .ease-hero-logo-wrap{
+    left:50%!important;
+    top:43%!important;
+    width:min(38vw,610px)!important;
+    height:min(38vw,610px)!important;
+    transform:translate(-50%,-50%)!important;
+  }
+  .home-ease-v20 .ease-hero-logo{
+    width:100%!important;
+    height:100%!important;
+    object-fit:contain!important;
+    object-position:center!important;
+  }
+
+  /* Approved CTA: every element belongs to one centered column. */
+  .home-ease-v20 .landing-contact-v18{
+    min-height:calc(100vh - 76px)!important;
+    padding:90px 0!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+  }
+  .home-ease-v20 .landing-contact-inner-v18{
+    width:min(calc(100% - 80px),1400px)!important;
+    margin:0 auto!important;
+    display:flex!important;
+    flex-direction:column!important;
+    align-items:center!important;
+    justify-content:center!important;
+    text-align:center!important;
+  }
+  .home-ease-v20 .landing-contact-inner-v18 .eyebrow{
+    width:100%!important;
+    margin:0 0 18px!important;
+    text-align:center!important;
+  }
+  .home-ease-v20 .landing-contact-inner-v18 h2{
+    width:100%!important;
+    max-width:980px!important;
+    margin:0 auto!important;
+    text-align:center!important;
+    font-size:clamp(62px,6vw,92px)!important;
+    line-height:.91!important;
+  }
+  .home-ease-v20 .landing-contact-v18 .landing-contact-inner-v18>p:not(.eyebrow){
+    width:100%!important;
+    max-width:610px!important;
+    margin:24px auto 0!important;
+    text-align:center!important;
+  }
+  .home-ease-v20 .landing-contact-actions-v18{
+    width:100%!important;
+    margin:34px auto 0!important;
+    display:flex!important;
+    justify-content:center!important;
+    align-items:center!important;
+    gap:28px!important;
+  }
+}
+
+/* ============================================================
+   V24 — responsive composition fixes.
+   Desktop references stay untouched; phone/tablet get their own scale.
+   ============================================================ */
+@media (max-width: 1000px){
+  .home-ease-v20 .ease-hero-logo-wrap{
+    left:50%!important;
+    top:36%!important;
+    width:clamp(230px,42vw,390px)!important;
+    height:auto!important;
+    aspect-ratio:900/751;
+    transform:translate(-50%,-50%)!important;
+  }
+  .home-ease-v20 .ease-hero-copy{
+    left:clamp(28px,6vw,64px)!important;
+    right:auto!important;
+    bottom:8vh!important;
+    width:min(520px,52vw)!important;
+  }
+  .home-ease-v20 .ease-hero-copy h1{font-size:clamp(54px,7vw,76px)!important}
+}
+
+@media (max-width: 560px){
+  /* Hero: centered mark, copy below it, both comfortably inside one phone viewport. */
+  .home-ease-v20 .ease-hero{
+    min-height:100svh!important;
+    min-height:100dvh!important;
+    padding-top:68px!important;
+  }
+  .home-ease-v20 .ease-hero-logo-wrap{
+    left:50%!important;
+    top:34%!important;
+    width:min(48vw,205px)!important;
+    height:auto!important;
+    aspect-ratio:900/751;
+  }
+  .home-ease-v20 .ease-hero-copy{
+    left:22px!important;
+    right:22px!important;
+    bottom:8.5vh!important;
+    width:auto!important;
+  }
+  .home-ease-v20 .ease-hero-copy h1{
+    font-size:46px!important;
+    line-height:.94!important;
+  }
+  .home-ease-v20 .ease-hero-copy>p:last-child{
+    max-width:360px!important;
+    margin-top:20px!important;
+    font-size:13px!important;
+  }
+
+  /* Process: mobile is a normal vertical section; no desktop-sized whitespace. */
+  .home-ease-v20 .landing-process-section{padding:82px 0 92px!important}
+  .home-ease-v20 .process-layout-v18{display:block!important}
+  .home-ease-v20 .process-intro-v18{margin-bottom:44px!important}
+  .home-ease-v20 .process-intro-v18 h2{
+    font-size:44px!important;
+    line-height:.94!important;
+  }
+  .home-ease-v20 .questionnaire-preview-v18{
+    width:100%!important;
+    margin-top:32px!important;
+    aspect-ratio:1.2/1!important;
+    min-height:0!important;
+  }
+  .home-ease-v20 .questionnaire-preview-v18 img{
+    width:100%!important;
+    height:100%!important;
+    object-fit:cover!important;
+    object-position:top center!important;
+  }
+  .home-ease-v20 .process-steps-v18{
+    display:grid!important;
+    grid-template-columns:1fr!important;
+    gap:14px!important;
+    border-top:0!important;
+  }
+  .home-ease-v20 .process-step-v18{
+    min-height:0!important;
+    padding:28px 22px 30px!important;
+    grid-template-columns:50px 1fr!important;
+    gap:14px!important;
+    border:1px solid var(--line)!important;
+    background:rgba(255,250,242,.38)!important;
+  }
+  .home-ease-v20 .process-step-v18 h3{font-size:30px!important;line-height:1.02!important}
+  .home-ease-v20 .process-step-v18 p{font-size:12px!important;line-height:1.65!important}
+
+  /* Final CTA: one centered mobile composition, not desktop spacing squeezed into 420px. */
+  .home-ease-v20 .landing-contact-v18{
+    min-height:calc(100svh - 68px)!important;
+    min-height:calc(100dvh - 68px)!important;
+    padding:72px 0!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+  }
+  .home-ease-v20 .landing-contact-inner-v18{
+    width:calc(100% - 38px)!important;
+    margin:0 auto!important;
+    display:flex!important;
+    flex-direction:column!important;
+    align-items:center!important;
+    text-align:center!important;
+  }
+  .home-ease-v20 .landing-contact-inner-v18 .eyebrow{
+    width:100%!important;
+    margin:0 0 16px!important;
+    text-align:center!important;
+  }
+  .home-ease-v20 .landing-contact-inner-v18 h2{
+    width:100%!important;
+    max-width:390px!important;
+    margin:0 auto!important;
+    font-size:42px!important;
+    line-height:.93!important;
+    text-align:center!important;
+  }
+  .home-ease-v20 .landing-contact-v18 .landing-contact-inner-v18>p:not(.eyebrow){
+    max-width:350px!important;
+    margin:24px auto 0!important;
+    font-size:13px!important;
+    line-height:1.65!important;
+    text-align:center!important;
+  }
+  .home-ease-v20 .landing-contact-actions-v18{
+    width:100%!important;
+    margin:30px auto 0!important;
+    display:flex!important;
+    flex-direction:column!important;
+    align-items:center!important;
+    gap:18px!important;
+  }
+  .home-ease-v20 .landing-contact-actions-v18 .button-v18-light{
+    width:100%!important;
+    max-width:360px!important;
+    margin:0!important;
+  }
+}
+
+@media (max-width: 380px){
+  .home-ease-v20 .ease-hero-logo-wrap{width:46vw!important;top:32%!important}
+  .home-ease-v20 .ease-hero-copy h1{font-size:41px!important}
+  .home-ease-v20 .landing-contact-inner-v18 h2{font-size:38px!important}
+}

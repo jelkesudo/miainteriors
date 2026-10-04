@@ -22,7 +22,7 @@ export default function Footer() {
             <span className="footer-label">Kontakt</span>
             <Link to="/kontakt">Pošaljite upit <ArrowUpRight size={13}/></Link>
             <a href="mailto:info@miainteriorstudio.rs"><Mail size={13}/> Email</a>
-            <a href="#"><Instagram size={13}/> Instagram</a>
+            <a href="https://www.instagram.com/miainteriorstudio/" target="_blank" rel="noopener noreferrer" aria-label="MIA Interior Studio na Instagramu"><Instagram size={13}/> Instagram</a>
           </div>
         </div>
       </div>
