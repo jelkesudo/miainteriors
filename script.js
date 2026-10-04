@@ -19,8 +19,3 @@ document.querySelectorAll('.service-toggle').forEach((button) => {
         card?.classList.toggle('is-open');
     });
 });
-
-document.querySelector('.contact-form')?.addEventListener('submit', (event) => {
-    event.preventDefault();
-    alert('Forma je trenutno demo. Poveži je sa Netlify Forms, Formspree ili backendom.');
-});

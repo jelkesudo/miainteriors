@@ -1,0 +1,115 @@
+.thank-you-page {
+  min-height: 100dvh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 120px 24px 80px;
+
+  background:
+    radial-gradient(
+      circle at 75% 20%,
+      rgba(120, 13, 25, 0.06),
+      transparent 38%
+    ),
+    #f5efe5;
+}
+
+.thank-you-content {
+  width: min(850px, 100%);
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.thank-you-eyebrow {
+  margin-bottom: 28px;
+
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+
+  color: #7b111b;
+}
+
+.thank-you-content h1 {
+  margin: 0;
+
+  font-family: "Instrument Serif", serif;
+  font-size: clamp(64px, 8vw, 130px);
+  font-weight: 400;
+  line-height: 0.88;
+  letter-spacing: -0.035em;
+
+  color: #171310;
+}
+
+.thank-you-content h1 em {
+  color: #7b111b;
+  font-weight: 400;
+}
+
+.thank-you-content p {
+  margin: 40px 0 46px;
+
+  font-size: 17px;
+  line-height: 1.7;
+
+  color: #756e68;
+}
+
+.thank-you-button {
+  min-width: 250px;
+  min-height: 58px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+
+  padding: 0 30px;
+
+  background: #7b111b;
+  color: #fff;
+
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease;
+}
+
+.thank-you-button:hover {
+  background: #5f0c14;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 600px) {
+  .thank-you-page {
+    padding: 100px 20px 60px;
+  }
+
+  .thank-you-eyebrow {
+    margin-bottom: 22px;
+    font-size: 10px;
+  }
+
+  .thank-you-content h1 {
+    font-size: clamp(58px, 19vw, 82px);
+  }
+
+  .thank-you-content p {
+    margin: 30px 0 38px;
+    font-size: 15px;
+  }
+
+  .thank-you-button {
+    width: 100%;
+  }
+}

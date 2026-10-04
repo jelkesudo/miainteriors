@@ -7,6 +7,7 @@ import Projects from './pages/Projects';
 import Contact from './pages/Contact';
 import About from './pages/About';
 import ProjectDetail from './pages/ProjectDetail';
+import ThankYou from "./pages/ThankYou";
 
 function ScrollReset() {
   const { pathname } = useLocation();
@@ -47,6 +48,7 @@ export default function App() {
         <Route path="/projekti/:slug" element={<ProjectDetail />} />
         <Route path="/kontakt" element={<Contact />} />
         <Route path="/o-nama" element={<About />} />
+        <Route path="/hvala" element={<ThankYou />} />
       </Routes>
       <Footer />
     </>
