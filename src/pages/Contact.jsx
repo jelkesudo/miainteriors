@@ -1,36 +1,37 @@
-import { useSearchParams } from 'react-router-dom';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 import services from '../data/services.json';
-import { useNavigate } from "react-router-dom";
-const navigate = useNavigate();
 
-const handleSubmit = async (event) => {
-  event.preventDefault();
-
-  const form = event.currentTarget;
-  const formData = new FormData(form);
-
-  try {
-    const response = await fetch("/", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/x-www-form-urlencoded",
-      },
-      body: new URLSearchParams(formData).toString(),
-    });
-
-    if (!response.ok) {
-      throw new Error("Greška pri slanju forme.");
-    }
-
-    navigate("/hvala");
-  } catch (error) {
-    console.error(error);
-    alert("Došlo je do greške pri slanju. Pokušajte ponovo.");
-  }
-};
 export default function Contact() {
   const [params] = useSearchParams();
+  const navigate = useNavigate();
   const requested = params.get('usluga') || '';
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch('/', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: new URLSearchParams(formData).toString(),
+      });
+
+      if (!response.ok) {
+        throw new Error(`Greška pri slanju forme (${response.status}).`);
+      }
+
+      form.reset();
+      navigate('/hvala');
+    } catch (error) {
+      console.error('Greška pri slanju forme:', error);
+      alert('Došlo je do greške pri slanju. Pokušajte ponovo.');
+    }
+  };
 
   return (
     <main className="route-page contact-route">
@@ -44,7 +45,13 @@ export default function Contact() {
           </p>
         </div>
 
-        <form name="mia-upit" method="POST" netlify data-netlify="true" className="react-contact-form" onSubmit={handleSubmit}>
+        <form
+          name="mia-upit"
+          method="POST"
+          data-netlify="true"
+          className="react-contact-form"
+          onSubmit={handleSubmit}
+        >
           <input type="hidden" name="form-name" value="mia-upit" />
           <label>Ime i prezime<input name="ime" required /></label>
           <label>Email adresa<input name="email" type="email" required /></label>
